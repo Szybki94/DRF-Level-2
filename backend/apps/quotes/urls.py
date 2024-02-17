@@ -1,6 +1,6 @@
-from django.contrib import admin
 from django.urls import path
+from apps.quotes.views import QuoteList
 
 urlpatterns = [
-    # path(),
+    path('quotes/', QuoteList.as_view(), name="quote-list"),
 ]
