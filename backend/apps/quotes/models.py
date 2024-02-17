@@ -7,4 +7,3 @@ class Quote(models.Model):
     context = models.TextField()
     source = models.TextField(max_length=256)
     created_at = models.DateField(auto_now_add=True)
-
