@@ -4,7 +4,13 @@ from apps.quotes.permissions import IsAdminOrReadOnly
 from apps.quotes.serializers import QuoteSerializer
 
 
-class QuoteList(generics.ListCreateAPIView):
+class QuoteListView(generics.ListCreateAPIView):
+    queryset = Quote.objects.all()
+    serializer_class = QuoteSerializer
+    permission_classes = [IsAdminOrReadOnly]
+
+
+class QuoteReadUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
     permission_classes = [IsAdminOrReadOnly]
